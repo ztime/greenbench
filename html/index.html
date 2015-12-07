@@ -6,5 +6,33 @@
 	<body>
 		<h1>Greenbench</h1>
 		<p>By Nachos Royale</p>
+
+        <canvas id="circle" width="150" height="150"></canvas>
+        <script>
+            var canvas = document.getElementById('circle');
+            var context = canvas.getContext('2d');
+            var centerX = canvas.width / 2;
+            var centerY = canvas.height / 2;
+            var radius = 70;
+
+            context.beginPath();
+            context.arc(centerX, centerY, radius, 0, 0.02 * Math.PI, false);
+            //context.fillStyle = 'green';
+            //context.fill();
+            context.lineWidth = 5;
+            context.strokeStyle = '#003300';
+            context.stroke();
+            for(var i = 0; i < 50;i++){
+                //setTimeout(fillCircle(i,context),10000);
+                timerId = setTimeout(function(){ alert("Hello");}, 3000);
+                clearTimeout(timerId);
+                console.log("here i am!");
+            }
+
+            function fillCircle(i, context){
+                context.arc(centerX, centerY, radius, 0, i * 0.02 * Math.PI, false);
+                context.stroke();
+            }
+        </script>
 	</body>
 </html>
