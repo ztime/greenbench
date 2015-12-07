@@ -1,5 +1,5 @@
 # Vim
-.swp
+*.swp
 # OSx
 .DS_Store
 Desktop.ini
