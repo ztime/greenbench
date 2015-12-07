@@ -1,0 +1,7 @@
+# Vim
+.swp
+# OSx
+.DS_Store
+Desktop.ini
+._*
+Thumbs.db
