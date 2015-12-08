@@ -80,6 +80,8 @@
                     requestAnimationFrame(function () {
                         animate(currPercent / 1000);
                     });
+                }else{
+                    fadeOutPercentAndInScore();
                 }
                 //update list
                 addItemsToList(percent);
@@ -96,9 +98,6 @@
                         insertTopList(msg[currMsg]);
                         currMsg++;
                         lastPercent = realPercent;
-                        if(currMsg > 33){
-                            console.log("DUDE, intebra");
-                        }
                     }
                 }
             }
@@ -107,6 +106,30 @@
                 var listItem = document.createElement('li');
                 listItem.appendChild(document.createTextNode(textToInsert));
                 list.insertBefore(listItem, list.firstChild);
+            }
+            
+            function fadeOutPercentAndInScore(){
+                var alphaPercent = 1.0; //percent alpha
+                var alphaScore = 0.0; //Score alpha
+                interval = setInterval(function () {
+                    context.clearRect(0,0,canvas.width,canvas.height);
+                    context.beginPath();
+                    context.arc(centerX,centerY, radius, -(Math.PI / 2), 1.5 * Math.PI, false);
+                    context.stroke();
+                    //draw percent
+                    context.fillStyle = "rgba(255, 0, 0, " + alphaPercent + ")";
+                    context.fillText("100%", centerX, centerY + 10);
+                    //draw score
+                    context.fillStyle = "rgba(255, 0, 0, " + alphaScore + ")";
+                    context.fillText("78p", centerX, centerY + 10);
+                    //change alphas
+                    var amount = 0.05;
+                    alphaPercent = alphaPercent - amount;
+                    alphaScore = alphaScore + amount;
+                    if(alphaPercent <= 0){
+                        clearInterval(interval);
+                    }
+                }, 100);
             }
 
             animate();
