@@ -5,8 +5,6 @@ body {
 #list-of-items{
     width: 300px;
     height: 500px;
-    border-style: solid;
-    border-width: 5px;
     overflow:hidden;
     font-size:small;
 }
