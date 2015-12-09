@@ -1,0 +1,87 @@
+body {
+	font-family: "Courier";
+	background-color: #00AED3;
+}
+
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+	color: black;
+}
+
+.circle {
+	border-radius: 50%;
+	text-align: center;
+	background-color: #EFEFEF;
+	margin: 1em 1em 1em 1em;
+}
+
+.inner {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#iphone {
+	position: fixed;
+	width: 340px;
+	left: 50%;
+	margin-left: -170px;
+	margin-top: -84px;
+	z-index: -1;
+}
+
+#wrapper {
+	height: 524px;
+	width: 295px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 90px;
+
+	background-color: #CCCCCC;
+}
+
+#help {
+	width: 2em;
+	height: 2em;
+}
+
+#big {
+	margin-top: 30%;
+	width: 10em;
+	height: 10em;
+	clear: both;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#info {
+	width: 15em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3em;
+	margin-bottom: 2em;
+}
+
+#help-text {
+	width: 15em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3em;
+}
+
+#learn-more {
+	width: 15em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5em;
+	text-align: center;
+	background-color: #EFEFEF;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-radius: 15px;
+}
+
+/* No scrolling */
+/*body, html {height:100%;}*/
+/*div.wrap {height:100%; overflow:hidden;}*/
+/*body {overflow: hidden; }*/
