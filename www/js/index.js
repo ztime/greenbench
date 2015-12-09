@@ -33,17 +33,19 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        //var appDiv = document.getElementById('mainDiv');
+        //appDiv.addEventListener("click", function(){ this.changeDom(); },false);
+        this.changeDom();
+        //appDiv.addEventListener("click", function(){ alert('fuck you');},false);
     },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+    changeDom: function() {
+        alert('fuck you again');
+        //var appDiv = document.getElementById('mainDiv');
+        //appDiv.innerHTML = "";
+        //var newCanvas = document.createElement('canvas');
+        //newCanvas.id = 'circle';
+        //newCanvas.height = 150;
+        //newCanvas.width = 150;
+        //appDiv.appendChild(newCanvas);
     }
 };

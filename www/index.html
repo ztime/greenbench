@@ -30,20 +30,34 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
+        <div id="mainDiv" class="app">
             <h1>Greenbench</h1>
-            <a href="main.html">Created by NatchosRoyale</a>
+            Created by NatchosRoyale
         </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <!--<script type="text/javascript" src="js/index.js"></script>!-->
+        <script type="text/javascript" src="js/animation.js"></script>
         <script type="text/javascript">
-            app.initialize();
-            //change page
-            var appDiv = document.getElemenyById('app');
-            document.body.addEventListener('click', function() {
-                //window.location('main.html'); 
-                alert("fuck you");
-            },false);
+            var appDiv = document.getElementById('mainDiv');
+            appDiv.addEventListener("click", changeDom,false);
+
+            function changeDom () {
+                appDiv.innerHTML = "";
+                var newCanvas = document.createElement('canvas');
+                newCanvas.id = 'circle';
+                newCanvas.height = 150;
+                newCanvas.width = 150;
+                appDiv.appendChild(newCanvas);
+                var newDiv = document.createElement('div');
+                newDiv.id = 'list-of-items';
+                var newList = document.createElement('ul');
+                newList.id = 'list';
+                newDiv.appendChild(newList);
+                appDiv.appendChild(newDiv);
+                appDiv.removeEventListener("click", changeDom);
+                setUp();
+                animate();
+            }
         </script>
     </body>
 </html>
