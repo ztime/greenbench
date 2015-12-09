@@ -85,3 +85,24 @@ a, a:visited, a:hover, a:active {
 /*body, html {height:100%;}*/
 /*div.wrap {height:100%; overflow:hidden;}*/
 /*body {overflow: hidden; }*/
+/* Animation specific css*/
+#circle-ani {
+    margin-top:25%;
+    width: 10em;
+    height: 10em;
+    clear: both;
+    margin-right:auto;
+    margin-left:4em;
+}
+
+#list-of-items {
+    height: 260px;
+    overflow:scroll;
+    font-size:small;
+}
+
+#list {
+    list-style-type: none;
+    margin:0px;
+    padding:0px;
+}
