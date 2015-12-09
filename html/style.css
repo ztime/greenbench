@@ -1,6 +1,5 @@
 body {
 	font-family: "Courier";
-	max-width: 640px;
 }
 
 a, a:visited, a:hover, a:active {
@@ -10,8 +9,8 @@ a, a:visited, a:hover, a:active {
 
 .circle {
 	border-radius: 50%;
-	border: 1px solid black;
 	text-align: center;
+	background-color: lightgray;
 }
 
 .inner {
@@ -26,9 +25,37 @@ a, a:visited, a:hover, a:active {
 }
 
 #big {
+	margin-top: 30%;
 	width: 10em;
 	height: 10em;
 	clear: both;
 	margin-right: auto;
 	margin-left: auto;
 }
+
+#info {
+	width: 15em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+#learn-more {
+	width: 75%;
+	position: fixed;
+	left: 50%;
+	margin-left: -37.5%;
+	bottom: 4em;
+
+	text-align: center;
+	background-color: lightgray;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-radius: 15px;
+}
+
+/* No scrolling */
+body, html {height:100%;}
+div.wrap {height:100%; overflow:hidden;}
+body {overflow: hidden; }
