@@ -53,17 +53,24 @@ function setUp(){
     context.lineWidth = 5;
     context.strokeStyle = '#009933';
     context.font = '20pt Monaco';
-    context.fillStyle = 'grey';
     context.textAlign = 'center';
 }
 
 function animate(percent){
     var percentText = (percent * 100).toFixed() + "%";
     context.clearRect(0,0,canvas.width, canvas.height);
+
     context.beginPath();
-    context.arc(centerX, centerY, radius, -(Math.PI / 2), ( ((Math.PI * 2) * percent) - (Math.PI / 2)) , false);
+    context.arc(centerX, centerY, radius + 1, -(Math.PI / 2), ( ((Math.PI * 2) * percent) - (Math.PI / 2)) , false);
     context.stroke();
+
+    context.beginPath();
+    context.arc(centerX, centerY, radius, 0, (Math.PI * 2), false);
+    context.fillStyle = 'grey';
+    context.fill();
+
     //y + 10 = y + font.height
+    context.fillStyle = 'silver';
     context.fillText(percentText, centerX , centerY + 10);
     currPercent++;
     if(currPercent < 1001) {
@@ -106,13 +113,17 @@ function fadeOutPercentAndInScore(){
         context.beginPath();
         context.arc(centerX,centerY, radius, -(Math.PI / 2), 1.5 * Math.PI, false);
         context.stroke();
+        context.beginPath();
+        context.arc(centerX, centerY, radius, 0, (Math.PI * 2), false);
+        context.fillStyle = 'grey';
+        context.fill();
         //draw percent
         if(alphaScore > 0.05){
-            context.fillStyle = "rgba(255, 0, 0, " + alphaPercent + ")";
+            context.fillStyle = "rgba(192, 192, 192, " + alphaPercent + ")";
         context.fillText("100%", centerX, centerY + 10);
         }
         //draw score
-        context.fillStyle = "rgba(255, 0, 0, " + alphaScore + ")";
+        context.fillStyle = "rgba(192, 192, 192, " + alphaScore + ")";
         context.fillText("78p", centerX, centerY + 10);
         //change alphas
         var amount = 0.05;
@@ -122,5 +133,4 @@ function fadeOutPercentAndInScore(){
             clearInterval(interval);
         }
     }, 100);
-    alert('done');
 }

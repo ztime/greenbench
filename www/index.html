@@ -39,9 +39,31 @@
         <script type="text/javascript" src="js/animation.js"></script>
         <script type="text/javascript">
             var appDiv = document.getElementById('mainDiv');
-            appDiv.addEventListener("click", changeDom,false);
+            appDiv.addEventListener("click", changeDomToMainMenu,false);
 
-            function changeDom () {
+            function changeDomToMainMenu () {
+                appDiv.innerHTML = "";
+                var newCanvas = document.createElement('canvas');
+                newCanvas.id = 'circleMenu';
+                newCanvas.height = 150;
+                newCanvas.width = 150;
+                appDiv.appendChild(newCanvas);
+                context = newCanvas.getContext('2d');
+                centerX = newCanvas.width / 2;
+                centerY = newCanvas.height / 2;
+                context.font = '11pt Monaco';
+                context.fillStyle = 'grey';
+                context.clearRect(0,0,newCanvas.width,newCanvas.height);
+                context.arc(centerX,centerY,70,0, 2 * Math.PI, false);
+                context.fill();
+                context.textAlign = 'center';
+                context.fillStyle = 'silver';
+                context.fillText("Test my phone", centerX, centerY + 5);
+                newCanvas.addEventListener("click", changeDomToAnimation,false);
+                appDiv.removeEventListener("click", changeDomToMainMenu);
+            }
+            
+            function changeDomToAnimation () {
                 appDiv.innerHTML = "";
                 var newCanvas = document.createElement('canvas');
                 newCanvas.id = 'circle';
@@ -54,7 +76,7 @@
                 newList.id = 'list';
                 newDiv.appendChild(newList);
                 appDiv.appendChild(newDiv);
-                appDiv.removeEventListener("click", changeDom);
+                appDiv.removeEventListener("click", changeDomToAnimation);
                 setUp();
                 animate();
             }
