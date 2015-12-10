@@ -1,85 +1,45 @@
-<!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div id="mainDiv" class="app">
-            <h1>Greenbench</h1>
-            Created by NatchosRoyale
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <!--<script type="text/javascript" src="js/index.js"></script>!-->
-        <script type="text/javascript" src="js/animation.js"></script>
-        <script type="text/javascript">
-            var appDiv = document.getElementById('mainDiv');
-            appDiv.addEventListener("click", changeDomToMainMenu,false);
+	<head>
+		<meta charset="utf-8">		
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			<img id="iphone" src="iphone-black.png">
 
-            function changeDomToMainMenu () {
-                appDiv.innerHTML = "";
-                var newCanvas = document.createElement('canvas');
-                newCanvas.id = 'circleMenu';
-                newCanvas.height = 150;
-                newCanvas.width = 150;
-                appDiv.appendChild(newCanvas);
-                context = newCanvas.getContext('2d');
-                centerX = newCanvas.width / 2;
-                centerY = newCanvas.height / 2;
-                context.font = '11pt Monaco';
-                context.fillStyle = 'grey';
-                context.clearRect(0,0,newCanvas.width,newCanvas.height);
-                context.arc(centerX,centerY,70,0, 2 * Math.PI, false);
-                context.fill();
-                context.textAlign = 'center';
-                context.fillStyle = 'silver';
-                context.fillText("Test my phone", centerX, centerY + 5);
-                newCanvas.addEventListener("click", changeDomToAnimation,false);
-                appDiv.removeEventListener("click", changeDomToMainMenu);
-            }
-            
-            function changeDomToAnimation () {
-                appDiv.innerHTML = "";
-                var newCanvas = document.createElement('canvas');
-                newCanvas.id = 'circle';
-                newCanvas.height = 150;
-                newCanvas.width = 150;
-                appDiv.appendChild(newCanvas);
-                var newDiv = document.createElement('div');
-                newDiv.id = 'list-of-items';
-                var newList = document.createElement('ul');
-                newList.id = 'list';
-                newDiv.appendChild(newList);
-                appDiv.appendChild(newDiv);
-                appDiv.removeEventListener("click", changeDomToAnimation);
-                setUp();
-                animate();
-            }
-        </script>
-    </body>
+			<a href="help.html">
+				<div class="circle" id="help" style="float: right">
+					<div class="inner">?</div>
+				</div>
+			</a>
+
+            <a href="runTest.html">
+			<div class="circle" id="big">
+				<div class="inner">
+					test my phone
+				</div>
+			</div>
+            </a>
+
+			<div id="info">
+				<div style="float: left;">
+					You are running<br>
+					Latest version
+				</div>
+				<div style="float: right;">
+					iOS 9.1<br>
+					iOS 9.2
+				</div>
+				<div style="clear: both; color: green; font-style: italic;">
+					<br>✓ Upgrade recommended
+				</div>
+			</div>
+
+			<a href="website.html">
+				<div id="learn-more">
+					learn more
+				</div>
+			</a>
+		</div>
+	</body>
 </html>

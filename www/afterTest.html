@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta charset="utf-8">		
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			<img id="iphone" src="iphone-black.png">
+
+			<a href="help.html">
+				<div class="circle" id="help" style="float: right">
+					<div class="inner">?</div>
+				</div>
+			</a>
+
+            <canvas id="circle-ani" width="150" height="150"></canvas>
+            <div id="info">
+                <p>Done!</p>
+                <p>Thank you for you patience.
+                <br>
+                Your score has been sent to our public database.</p>
+            </div>
+
+            <a href="index.html">
+                <div id="learn-more">
+                    go back
+                </div>
+            </a>
+		</div>
+        <script type"text/javascript">
+            canvas = document.getElementById('circle-ani');
+            context = canvas.getContext('2d');
+            centerX = canvas.width / 2;
+            centerY = canvas.height / 2;
+            context.beginPath();
+            context.arc(centerX,centerY,70+1,-(Math.PI/2), 1.5 * Math.PI,false);
+            context.lineWidth = 5;
+            context.strokeStyle = "#009933";
+            context.stroke();
+
+            context.beginPath();
+            context.arc(centerX, centerY, 70, 0, Math.PI*2, false);
+            context.fillStyle = "#EFEFEF";
+            context.fill();
+
+            context.fillStyle = 'black';
+            context.font = "20pt Courier";
+            context.textAlign = 'center';
+            context.fillText("78p", centerX, centerY + 10);
+        </script>
+	</body>
+</html>
