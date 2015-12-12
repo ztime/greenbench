@@ -95,6 +95,13 @@ a, a:visited, a:hover, a:active {
     margin-left:4em;
 }
 
+#help-box{
+    margin-left: 4px;
+    height: 360px;
+    overflow: scroll;
+    font-size:small;
+}
+
 #list-of-items {
     height: 260px;
     overflow:scroll;
