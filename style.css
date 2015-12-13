@@ -39,10 +39,11 @@ a, a:visited, a:hover, a:active {
 }
 
 #wrapper {
+	position: fixed;
+	left: 50%;
 	height: 524px;
-	width: 295px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 296px;
+	margin-left: -148px;
 	margin-top: 90px;
 
 	background-color: #CCCCCC;
@@ -94,9 +95,9 @@ a, a:visited, a:hover, a:active {
 }
 
 /* No scrolling */
-body, html {height:100%;}
-div.wrap {height:100%; overflow:hidden;}
-body {overflow: hidden; }
+/*body, html {height:100%;}*/
+/*div.wrap {height:100%; overflow:hidden;}*/
+/*body {overflow: hidden; }*/
 
 /* Animation specific css*/
 #circle-ani {
